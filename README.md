@@ -134,3 +134,12 @@ index 0c2bebc..349954c 100644
    end
  end
 ```
+
+#### Recompile the firmware
+
+````
+$ mix firmware
+
+````
+
+
