@@ -5,7 +5,7 @@ Demonstration on Erlang &amp; Elixir Fest 2019
 
 1. Provisioning of `hello_nerves` project and Building it
 1. Burning firm to microSD, Booting and Running IEx
-1. Editing `lib/hello_nerves.ex` and Burning by `ssh nerves.local`
+1. Editing `lib/hello_nerves.ex` and Upadating firmware by `ssh nerves.local`
 1. Burning firm over NervesHub
 1. Running device controlling apps integrated with scenic
 
@@ -112,3 +112,25 @@ iex(hello_nerves@nerves.local)2> HelloNerves.hello
 ```
 
 Enjoy the Nerves Hello World and IEx!!
+
+### Udating firmware by local ssh
+
+#### Edit `lib/hello_nerves.ex`
+
+```
+$ vim lib/hello_nerves.ex
+# Edit as follow
+$ git diff lib/hello_nerves.ex 
+diff --git a/hello_nerves/lib/hello_nerves.ex b/hello_nerves/lib/hello_nerves.ex
+index 0c2bebc..349954c 100644
+--- a/hello_nerves/lib/hello_nerves.ex
++++ b/hello_nerves/lib/hello_nerves.ex
+@@ -13,6 +13,6 @@ defmodule HelloNerves do
+ 
+   """
+   def hello do
+-    :world
++    "Erlang & Elixir Fest 2019!"
+   end
+ end
+```

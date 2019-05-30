@@ -13,6 +13,6 @@ defmodule HelloNerves do
 
   """
   def hello do
-    :world
+    "Erlang & Elixir Fest 2019!"
   end
 end
