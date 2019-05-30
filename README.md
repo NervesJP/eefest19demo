@@ -86,3 +86,27 @@ Connect microSD to hostPC with SD writer, and then,,,
 ```
 $ mix firmware.burn
 ```
+
+#### Connect the Nerves by ssh on VirtualEther
+
+```
+$ ssh nerves.local 
+Warning: Permanently added 'nerves.local,172.31.125.113' (RSA) to the list of known hosts.
+Interactive Elixir (1.8.1) - press Ctrl+C to exit (type h() ENTER for help)
+Toolshed imported. Run h(Toolshed) for more info
+RingLogger is collecting log messages from Elixir and Linux. To see the
+messages, either attach the current IEx session to the logger:
+
+  RingLogger.attach
+
+or print the next messages in the log:
+
+  RingLogger.next
+
+iex(hello_nerves@nerves.local)1> uname 
+Nerves nerves-2131 hello_nerves 0.1.0 (bee968a4-58e8-5d2e-6dd1-954970a1529c) arm
+iex(hello_nerves@nerves.local)2> HelloNerves.hello
+:world
+```
+
+Enjoy the Nerves Hello World and IEx!!
