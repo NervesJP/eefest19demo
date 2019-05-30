@@ -81,7 +81,7 @@ $ mix firmware
 
 #### Burn the firmware
 
-Connect microSD to hostPC, then,,,
+Connect microSD to hostPC with SD writer, and then,,,
 
 ```
 $ mix firmware.burn
