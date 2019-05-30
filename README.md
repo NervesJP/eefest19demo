@@ -5,7 +5,7 @@ Demonstration on Erlang &amp; Elixir Fest 2019
 
 1. Provisioning of `hello_nerves` project and Building it
 1. Burning firm to microSD, Booting and Running IEx
-1. Editing `lib/hello_nerves.ex` and Upadating firmware by `ssh nerves.local`
+1. Editing `lib/hello_nerves.ex` and Uploading firmware by `ssh nerves.local`
 1. Burning firm over NervesHub
 1. Running device controlling apps integrated with scenic
 
@@ -113,7 +113,7 @@ iex(hello_nerves@nerves.local)2> HelloNerves.hello
 
 Enjoy the Nerves Hello World and IEx!!
 
-### Udating firmware by local ssh
+### Uploading firmware by local ssh
 
 #### Edit `lib/hello_nerves.ex`
 
@@ -137,9 +137,59 @@ index 0c2bebc..349954c 100644
 
 #### Recompile the firmware
 
-````
+```
 $ mix firmware
+```
 
-````
+#### Generate upload.sh
 
+```
+$ mix firmware.gen.script
+Writing upload.sh...
 
+```
+
+#### Upload firmware by local ssh
+
+```
+$ ./upload.sh 
+Path: ./_build/rpi0_dev/nerves/images/hello_nerves.fw
+Product: hello_nerves 0.1.0
+UUID: 2cd4a00a-042f-5e41-5d8f-cf16de422f3e
+Platform: rpi0
+
+Uploading to nerves.local...
+Warning: Permanently added '[nerves.local]:8989,[172.31.125.113]:8989' (RSA) to the list of known hosts.
+Running fwup...
+fwup: Upgrading partition B
+|====================================| 100% (31.37 / 31.37) MB
+Success!
+Elapsed time: 18.933 s
+Rebooting...
+Received disconnect from 172.31.125.113 port 8989:11: Terminated (shutdown) by supervisor
+Disconnected from 172.31.125.113 port 8989
+
+```
+
+#### Run IEx and Check the result
+
+```
+$ ssh nerves.local 
+Warning: Permanently added 'nerves.local,172.31.125.113' (RSA) to the list of known hosts.
+Interactive Elixir (1.8.1) - press Ctrl+C to exit (type h() ENTER for help)
+Toolshed imported. Run h(Toolshed) for more info
+RingLogger is collecting log messages from Elixir and Linux. To see the
+messages, either attach the current IEx session to the logger:
+
+  RingLogger.attach
+
+or print the next messages in the log:
+
+  RingLogger.next
+
+iex(hello_nerves@nerves.local)1> HelloNerves.hello
+"Erlang & Elixir Fest 2019!"
+iex(hello_nerves@nerves.local)2> exit
+Connection to nerves.local closed.
+
+```
