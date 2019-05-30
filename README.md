@@ -71,4 +71,10 @@ index da0c2ac..b5335a6 100644
 
 ```
 
+#### Build the project
 
+```
+$ export MIX_TARGET=rpi0
+$ mix deps.get
+$ mix firmware
+```
