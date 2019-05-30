@@ -9,3 +9,14 @@ Demonstration on Erlang &amp; Elixir Fest 2019
 1. Burning firm over NervesHub
 1. Running device controlling apps integrated with scenic
 
+## Instruction
+
+### 1. Provisioning and Building
+
+#### Create the project
+
+```
+$ mix nerves.new hello_nerves --init-gadget
+$ cd hello_nerves
+```
+
