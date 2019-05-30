@@ -79,6 +79,8 @@ $ mix deps.get
 $ mix firmware
 ```
 
+### 2. Burn the firm to microSD, and Booting and Running IEx
+
 #### Burn the firmware
 
 Connect microSD to hostPC with SD writer, and then,,,
