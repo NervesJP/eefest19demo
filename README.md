@@ -78,3 +78,11 @@ $ export MIX_TARGET=rpi0
 $ mix deps.get
 $ mix firmware
 ```
+
+#### Burn the firmware
+
+Connect microSD to hostPC, then,,,
+
+```
+$ mix firmware.burn
+```
