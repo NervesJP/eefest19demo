@@ -39,6 +39,7 @@ defmodule ScenicDevCtrl.MixProject do
       {:shoehorn, "~> 0.4"},
       {:ring_logger, "~> 0.6"},
       {:toolshed, "~> 0.2"},
+      {:scenic_dev_ui, path: "../scenic_dev_ui"},
 
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
@@ -47,6 +48,10 @@ defmodule ScenicDevCtrl.MixProject do
       {:nerves_key, "~> 0.5", targets: @all_targets},
       {:nerves_key_pkcs11, "~> 0.2", targets: @all_targets},
       {:nerves_time, "~> 0.2", targets: @all_targets},
+      # Dependencies for all targets
+      {:scenic_driver_oled_bonnet,
+        github: "nerves-training/scenic_driver_oled_bonnet",
+        targets: @all_targets},
 
       # Dependencies for specific targets
       {:nerves_system_rpi0, "~> 1.6", runtime: false, targets: :rpi0},
