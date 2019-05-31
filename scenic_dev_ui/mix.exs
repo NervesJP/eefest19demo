@@ -23,8 +23,8 @@ defmodule ScenicDevUI.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:scenic, "~> 0.9"},
-      {:scenic_driver_glfw, "~> 0.9", targets: :host},
+      {:scenic, "~> 0.10"},
+      {:scenic_driver_glfw, "~> 0.10", targets: :host},
     ]
   end
 end
