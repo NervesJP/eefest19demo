@@ -45,7 +45,9 @@ if keys == [],
     """)
 
 config :nerves_firmware_ssh,
-  authorized_keys: Enum.map(keys, &File.read!/1)
+  authorized_keys: [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDT4g5XBtPODzd0cgi+zvulnbv4hFNT4wQL60pOt3nQDIhCfo+UOyKchm/sEfePPxMmj56OAjHD+qF2PQmkD8cRg4zEWRTJyHDwObcsjEoSzf3shSaIbNKafBr6i+YpDtH05kNmPIUAIUPpf97bu/4+8qnarjORAFwL32B6OrYtbdR8eT/O7xK0hpuoJscmpgs4gh02jX53g/RfitJvFJLzbluktg51sxQYXtMZvRSosj55vJM2udJ1voxuqCtFaHvCtIepvjmAwcZSOL3vf3mCbACYt63Ztic0SG+lQwlEG8RafsVgUgFkzfASnHExjg8H0mlz6hR91LY2aFqFrc31 eefest19"
+  ]
 
 # Configure nerves_init_gadget.
 # See https://hexdocs.pm/nerves_init_gadget/readme.html for more information.
