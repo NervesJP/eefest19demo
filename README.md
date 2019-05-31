@@ -11,6 +11,8 @@ Demonstration on Erlang &amp; Elixir Fest 2019
 
 ## Instruction
 
+NOTE: Files of Step 1.,2.,3. are only located on respective branches (e.g., ["3"](https://github.com/takasehideki/eefest19demo/tree/3)). 
+
 ### 1. Provisioning and Building
 
 #### Create the project
@@ -193,3 +195,12 @@ iex(hello_nerves@nerves.local)2> exit
 Connection to nerves.local closed.
 
 ```
+
+
+## References and Acknowledgement
+
+- https://github.com/nerves-training/nerves_team
+  - Special thanks to [Nerves Project](https://nerves-project.org/) members and Nerves Friends!!
+  - I used branch ["8"](https://github.com/nerves-training/nerves_team/tree/8) of its repo as the basis of demonstration of Step 4.
+
+
