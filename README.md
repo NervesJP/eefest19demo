@@ -198,8 +198,6 @@ Connection to nerves.local closed.
 
 ### 4. Burning firm over NervesHub
 
-NOTE: scenic_dev_ctrl/config/config.exs is removed from version control since WiFi (personal) info was written to it
-
 #### Build and Burn firmware
 
 ```
