@@ -15,3 +15,10 @@
 
 # If the VM crashes, it generates a dump, let's ignore it too.
 erl_crash.dump
+
+# Ignore signing certificate
+eefest19demo-signer.*
+
+# Temporal ignore since WiFi info was wrote
+# $ git rm --cached config/config.exs 
+config/config.exs

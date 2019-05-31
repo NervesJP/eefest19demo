@@ -196,6 +196,24 @@ Connection to nerves.local closed.
 
 ```
 
+### 4. Burning firm over NervesHub
+
+NOTE: scenic_dev_ctrl/config/config.exs is removed from version control since WiFi (personal) info was written to it
+
+#### Build and Burn firmware
+
+```
+$ cd scenic_dev_ctrl
+$ export MIX_TARGET=rpi0
+$ mix deps.get
+$ mix firmware
+$ ./upload.sh
+```
+
+#### NervesHub and NervesKey setting
+
+TBA (Please consider to attend Nerves Training!!)
+
 
 ## References and Acknowledgement
 

@@ -13,6 +13,6 @@ defmodule ScenicDevCtrl do
 
   """
   def hello do
-    :world
+    :japan
   end
 end

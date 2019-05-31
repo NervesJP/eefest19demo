@@ -6,7 +6,7 @@ defmodule ScenicDevCtrl.MixProject do
   def project do
     [
       app: :scenic_dev_ctrl,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.8",
       archives: [nerves_bootstrap: "~> 1.5"],
       start_permanent: Mix.env() == :prod,
@@ -43,6 +43,10 @@ defmodule ScenicDevCtrl.MixProject do
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
+      {:nerves_hub, "~> 0.2", targets: @all_targets},
+      {:nerves_key, "~> 0.5", targets: @all_targets},
+      {:nerves_key_pkcs11, "~> 0.2", targets: @all_targets},
+      {:nerves_time, "~> 0.2", targets: @all_targets},
 
       # Dependencies for specific targets
       {:nerves_system_rpi0, "~> 1.6", runtime: false, targets: :rpi0},
