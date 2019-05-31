@@ -212,6 +212,32 @@ $ ./upload.sh
 
 TBA (Please consider to attend Nerves Training!!)
 
+### 5. Running device controlling apps integrated with scenic
+
+#### Build and Run scenic UI
+
+```
+$ cd scenic_dev_ui
+$ mix deps.get
+$ mix scenic.run
+
+```
+
+#### Build firmware
+
+```
+$ cd scenic_dev_ctrl
+$ export MIX_TARGET=rpi0
+$ mix deps.get
+$ mix firmware
+# upload over NervesHub or upload.sh
+```
+
+Then, 
+> Erlang & Elixir
+> Fest 2019
+will be appeared on OLED Bonnet.
+Also, white/black of display can be inverted by pushing #5.
 
 ## References and Acknowledgement
 

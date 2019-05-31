@@ -6,7 +6,7 @@ defmodule ScenicDevCtrl.MixProject do
   def project do
     [
       app: :scenic_dev_ctrl,
-      version: "0.2.0",
+      version: "0.5.0",
       elixir: "~> 1.8",
       archives: [nerves_bootstrap: "~> 1.5"],
       start_permanent: Mix.env() == :prod,

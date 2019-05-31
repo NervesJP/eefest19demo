@@ -7,11 +7,17 @@ defmodule ScenicDevCtrl.Application do
 
   use Application
 
+  use GenServer
+  require Logger
+
+  alias Circuits.GPIO
+
   def start(_type, _args) do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ScenicDevCtrl.Supervisor]
     Supervisor.start_link(children(@target), opts)
+    GenServer.start_link(__MODULE__, [])
   end
 
   # List all child processes to be supervised
@@ -41,4 +47,18 @@ defmodule ScenicDevCtrl.Application do
       {NervesHub.Supervisor, [key: key, cert: cert, cacerts: cacerts]}
     ]
   end
+
+  def init(_) do
+    {:ok, button} = GPIO.open(5, :input, pull_mode: :pullup)
+    GPIO.set_interrupts(button, :both)
+    {:ok, i2c} = Circuits.I2C.open("i2c-1")
+    {:ok, %{button: button, i2c: i2c}}
+  end
+
+  def handle_info({:circuits_gpio, 5, _timestamp, value}, state) do
+    Logger.debug("Button is now #{value}")
+    Circuits.I2C.write(state.i2c, 60, <<0x00, 0xa7 - value>>)
+    {:noreply, state}
+  end
+  
 end
