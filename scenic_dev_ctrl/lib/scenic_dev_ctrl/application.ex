@@ -16,7 +16,7 @@ defmodule ScenicDevCtrl.Application do
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: ScenicDevCtrl.Supervisor]
-    Supervisor.start_link(children(@target), opts)
+    #  Supervisor.start_link(children(@target), opts)
     GenServer.start_link(__MODULE__, [])
   end
 

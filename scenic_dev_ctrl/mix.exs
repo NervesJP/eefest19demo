@@ -44,9 +44,6 @@ defmodule ScenicDevCtrl.MixProject do
       # Dependencies for all targets except :host
       {:nerves_runtime, "~> 0.6", targets: @all_targets},
       {:nerves_init_gadget, "~> 0.4", targets: @all_targets},
-      {:nerves_hub, "~> 0.2", targets: @all_targets},
-      {:nerves_key, "~> 0.5", targets: @all_targets},
-      {:nerves_key_pkcs11, "~> 0.2", targets: @all_targets},
       {:nerves_time, "~> 0.2", targets: @all_targets},
       # Dependencies for all targets
       {:scenic_driver_oled_bonnet,
